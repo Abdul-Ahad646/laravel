@@ -2,6 +2,7 @@
 
 use App\Models\Users;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UsersController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -31,8 +32,6 @@ Route::get('/login', function () {
 Route::get('/product_category', function () {
     return view('product_category');
 });
-Route::get('/registration', function () {
-    return view('registration');
-});
 
-Route::post('/create', function () {});
+Route::resource('registration',UsersController::class);
+Route::post('/registration',[UsersController::class,'store'])->name('registration.store');

@@ -22,10 +22,12 @@
             <div class="col-lg-7 px-5 pt-5">
                 <h1 class="font-weight-bold py-3">Campus Canteen</h1>
                 <h4>Make your account</h4>
-                <form action="registration_processor.php"method="post" enctype="multipart/form-data">
+                <form method="post" action="{{route('registration.store')}}" enctype="multipart/form-data">
+                    @csrf 
+                    @method('post')
                     <div class="form-row">
                         <div class="col-lg-7">
-                            <input type="text" name="Name" placeholder="Enter your name" class="form-control my-2 p-2">
+                            <input type="text" name="name" placeholder="Enter your name" class="form-control my-2 p-2">
                         </div>
                     </div>
                     <div class="form-row">
@@ -47,7 +49,7 @@
 
                     <div class="form-row">
                         <div class="col-lg-7">
-                            <button type="button" class="btn1 mt-3 mb-5">Registration</button>
+                            <input type="submit" class="btn1 mt-3 mb-5" value="Registration">
                         </div>
                     </div>
                 </form>
