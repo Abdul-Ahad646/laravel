@@ -1,7 +1,7 @@
 <?php
 
+use App\Models\Users;
 use Illuminate\Support\Facades\Route;
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -34,3 +34,5 @@ Route::get('/product_category', function () {
 Route::get('/registration', function () {
     return view('registration');
 });
+
+Route::post('/create', function () {});
