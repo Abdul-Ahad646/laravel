@@ -12,7 +12,8 @@ class UsersController extends Controller
      */
     public function index()
     {
-        return view('registration');
+        $users =Users::all();
+        return view('users_data_show',['users' => $users]);
     }
 
     /**
@@ -37,6 +38,7 @@ class UsersController extends Controller
         ]);
         
         $newUsers =Users::create($data);
+        return redirect(route('registration'));
        
     }
 
